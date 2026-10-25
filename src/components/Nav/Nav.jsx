@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 import styles from "./Nav.module.css";
-
+import { memo } from "react";
 const navRoutes = [
   { id: crypto.randomUUID(), path: "", title: "Home" },
   { id: crypto.randomUUID(), path: "clock", title: "Clock" },
@@ -10,7 +10,7 @@ const navRoutes = [
   { id: crypto.randomUUID(), path: "counter", title: "Counter" },
 ];
 
-export const Nav = () => {
+export const Nav = memo(() => {
   return (
     <nav className={styles.nav}>
       {navRoutes.map(({ id, path, title }) => (
@@ -25,4 +25,4 @@ export const Nav = () => {
       ))}
     </nav>
   );
-};
+})
